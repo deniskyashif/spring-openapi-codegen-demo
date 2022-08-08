@@ -1,10 +1,14 @@
+# spring-openapi-codegen-demo
+
+This repository demonstrates how to automatically create a Web API specification document from source code and how to generate an API client application (in various languages) from it. 
+
 ## Generate OpenApi spec using code annotations
 
-[The OpenAPI Specification Explained](https://oai.github.io/Documentation/specification.html)
+This part requires [Java 8](https://www.oracle.com/java/technologies/downloads/) and [Gradle](https://gradle.org/). [The OpenAPI Specification Explained](https://oai.github.io/Documentation/specification.html)
 
 1. Add `'org.springdoc:springdoc-openapi-ui:1.6.9'` to generate OpenAPI UI in the browser
 2. Add `'io.swagger.core.v3:swagger-core:2.2.2'` to include code annotations for documenting API endpoints
-3. Document the API endpoints using code annotations (see `GreetingController.java`), 
+3. Document the API endpoints using code annotations (see [GreetingController.java](https://github.com/deniskyashif/spring-openapi-codegen-demo/blob/master/src/main/java/com/example/restservice/GreetingController.java)).
 4. Run the web app `gradle bootRun` and navigate to `localhost:8080/swagger-ui/index.html` to see the interactive documentation.
 5. Access the OpenAPI specification JSON document on `http://localhost:8080/v3/api-docs`
 
@@ -19,7 +23,7 @@ The file is located in `<path-to-project>/build/openapi.json`. Make sure no othe
 The OpenAPI Generator requires [node.js](https://nodejs.org/en/). See the instructions for [installation](https://openapi-generator.tech/docs/installation) and [usage](https://openapi-generator.tech/docs/usage).
 
 List the available generators:  
-`openapi-generator-cli-list`
+`openapi-generator-cli list`
 
 Validate the OpenApi spec file:  
 `openapi-generator-cli validate -i <path-to>/openapi.json`
